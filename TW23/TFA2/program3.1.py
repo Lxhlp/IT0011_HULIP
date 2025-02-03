@@ -4,9 +4,10 @@ age = input("Enter your age: ")
 
 fullName = fname + " " + lname
 sliceName = fullName
+greetings = "Greeting Message: Hello, {}! Welcome. You are {} years old."
 
 print()
 print("Full Name: " + fullName)
 shortName = fullName[0:3]
 print("Sliced Name: " + shortName)
-print("Greeting Message: Hello, " + shortName + "! Welcome. You are " + age + " years old.")
+print(greetings.format(shortName, age))
