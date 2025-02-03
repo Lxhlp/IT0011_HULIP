@@ -1,0 +1,8 @@
+**************************************
+Reading Student Information
+**************************************
+Last Name: Alessandra
+First Name: Hulip
+Age: 21
+Contact Number: 09281742465
+Course: BSIT-WMA
