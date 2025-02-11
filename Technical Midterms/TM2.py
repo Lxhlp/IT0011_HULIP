@@ -8,8 +8,8 @@ month = int(month_str)
 day = int(day_str)
 year = int(year_str)
 
-month_name = months[month - 1] # List indices are 0-based
-day_formatted = str(day).lstrip('0') # Remove leading zero if present
+month_name = months[month - 1] # list indices
+day_formatted = str(day).lstrip('0') # remove leading zero if present
 
 formatted_date = f"{month_name} {day_formatted}, {year}"
 print(f"Date Output: {formatted_date}")
