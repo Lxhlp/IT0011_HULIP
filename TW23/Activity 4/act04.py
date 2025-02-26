@@ -1,4 +1,6 @@
-student_records = [(117392, ("Alex", "Lei"), 99, 99),
+#Default student records, the program will initially refer to this record if no file is opened.
+#If the user opened a file, this record will be also added to the file. 
+student_records = [(117392, ("Alex", "Lei"), 99, 99),   
                    (929123, ("Nicole", "Ashley"), 98, 99),
                    (202383, ("Mirabel", "Encanta"), 95, 96),
                    (563421, ("Eggsy", "Kingsman"), 98, 94)]
@@ -20,7 +22,7 @@ while True:
     print("-------------------------------------")
     choice = input("Enter your choice: ")
 
-    if choice == "1":  # Open File
+    if choice == "1":  #Open File
         filename = input("Enter filename to open: ")
         try:
             file = open(filename, 'r')
@@ -43,7 +45,7 @@ while True:
             print("=====================================")
             print("Error loading file.")
 
-    elif choice == "2":  # Save File
+    elif choice == "2":  #Save File
         if current_file:
             file = open(current_file, 'w')
             for record in student_records:
@@ -55,7 +57,7 @@ while True:
             print("=====================================")
             print("No file currently open. Please use 'Save As' first.")
 
-    elif choice == "3":  # Save As File
+    elif choice == "3":  #Save As File 
         filename = input("Enter filename to save as: ")
         file = open(filename, 'w')
         for record in student_records:
@@ -65,7 +67,7 @@ while True:
         print("=====================================")
         print(f"Saved records to {filename}.")
 
-    elif choice == "4":  # Show All Students Record
+    elif choice == "4":  #Show All Students Record
         while True:
             print("=====================================")
             print("Show All Students Record Options:")
@@ -77,7 +79,7 @@ while True:
 
             order_choice = input("Enter your order choice: ")
 
-            if order_choice == "1":  # Order by last name
+            if order_choice == "1":  #Order by last name
                 sorted_records = []
                 for record in student_records:
                     sorted_records.append(record)
@@ -89,9 +91,9 @@ while True:
                             sorted_records[j] = sorted_records[j+1]
                             sorted_records[j+1] = temp
                 for record in sorted_records:
-                    print(f"ID: {record[0]}, \nName: {record[1][0]} {record[1][1]}, \nClass Standing: {record[2]}, \nMajor Exam: {record[3]}")
+                    print(f"ID: {record[0]} \nName: {record[1][0]} {record[1][1]} \nClass Standing: {record[2]} \nMajor Exam: {record[3]}\n")
 
-            elif order_choice == "2":  # Order by grade
+            elif order_choice == "2":  #Order by grade
                 graded_records = []
                 for record in student_records:
                     final_grade = (record[2] * 0.6) + (record[3] * 0.4)
@@ -106,28 +108,28 @@ while True:
                             graded_records[j+1] = temp
 
                 for grade, record in graded_records:
-                    print(f"ID: {record[1][1][0]}, \nName: {record[1][1][1]} {record[1][1][1]}, \nGrade: {grade:.2f}")
+                    print(f"ID: {record[0]} \nName: {record[1][0]} {record[1][1]} \nGrade: {grade:.2f}\n")
 
             elif order_choice == "3":
-                break  # Return to main menu.
+                break  #Return to main menu.
 
             else:
                 print("=====================================")
                 print("Invalid order choice.")
 
-    elif choice == "5":  # Show Student Record
+    elif choice == "5":  #Show Student Record
         student_id = int(input("Enter Student ID: "))
         found = False
         for record in student_records:
             if record[0] == student_id:
-                print(f"ID: {record[0]}, \nName: {record[1][0]} {record[1][1]}, \nClass Standing: {record[2]}, \nMajor Exam: {record[3]}")
+                print(f"ID: {record[0]} \nName: {record[1][0]} {record[1][1]}, \nClass Standing: {record[2]}, \nMajor Exam: {record[3]}")
                 found = True
                 break
         if not found:
             print("=====================================")
             print("Student not found.")
 
-    elif choice == "6":  # Add Record
+    elif choice == "6":  #Add Record
         student_id = int(input("Enter Student ID: "))
         first_name = input("Enter First Name: ")
         last_name = input("Enter Last Name: ")
@@ -137,7 +139,7 @@ while True:
         print("=====================================")
         print("Record added.")
 
-    elif choice == "7":  # Edit Record
+    elif choice == "7":  #Edit Record
         student_id = int(input("Enter Student ID to edit: "))
         found = False
         for i in range(len(student_records)):
@@ -155,7 +157,7 @@ while True:
             print("=====================================")
             print("Student not found.")
 
-    elif choice == "8":  # Delete Record
+    elif choice == "8":  #Delete Record
         student_id = int(input("Enter Student ID to delete: "))
         found = False
         for i in range(len(student_records)):
@@ -169,7 +171,7 @@ while True:
             print("=====================================")
             print("Student not found.")
 
-    elif choice == "9":  # Exit
+    elif choice == "9":  #Exit
         print("=====================================")
         print("Exiting...")
         break
