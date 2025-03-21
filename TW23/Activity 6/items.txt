@@ -1,0 +1,3 @@
+2909,Gaming Console,Next-gen gaming console with 4K graphics and 1TB storage.,25000.0
+2301,Tablet,10-inch tablet with 64GB storage and stylus support.,50999.0
+317,Smartwatch,Fitness tracker with heart rate monitor and GPS.,7890.0
